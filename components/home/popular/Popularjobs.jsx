@@ -8,11 +8,14 @@ import { COLORS, SIZES } from "../../../constants";
 import PopularJobCard from "../../common/cards/popular/PopularJobCard";
 import { useRouter } from 'expo-router';
 import { isLoading } from 'expo-font';
+import useFetch from "../../../hook/useFetch";
 
 const Popularjobs = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [error, setError] = useState(false);
   const router = useRouter();
+
+  const { data, isLoading, error } = useFetch("search")
 
   return (
     <View style={styles.container}>
@@ -36,6 +39,7 @@ const Popularjobs = () => {
                   <PopularJobCard item={item} />
                 )}
                 keyExtractor={item => item}
+                horizontal
               />
         }
       </View>
