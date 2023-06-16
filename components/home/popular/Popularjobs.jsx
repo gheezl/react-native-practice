@@ -10,6 +10,7 @@ import { useRouter } from 'expo-router';
 import { isLoading } from 'expo-font';
 import useFetch from "../../../hook/useFetch";
 
+
 const Popularjobs = () => {
   // const [isLoading, setIsLoading] = useState(false);
   // const [error, setError] = useState(false);
