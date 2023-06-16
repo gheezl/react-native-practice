@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { View, Text, TouchableOpacity, FlatList, ActivityIndicator } from 'react-native'
 
 import styles from './popularjobs.style';
@@ -17,6 +17,7 @@ const Popularjobs = () => {
 
   const { data, isLoading, error } = useFetch("React Developer in Los Angeles")
 
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -34,11 +35,11 @@ const Popularjobs = () => {
               ? <Text>Something went wrong :(</Text>
               :
               <FlatList
-                data={[2, 3, 35, 454, 46, 47, 56, 5,]}
+                data={data}
                 renderItem={({ item }) => (
                   <PopularJobCard item={item} />
                 )}
-                keyExtractor={item => item}
+                keyExtractor={item => item.job_id}
                 horizontal
               />
         }

@@ -25,10 +25,8 @@ const useFetch = (query) => {
         try {
             setIsLoading(true);
             const response = await fetch(url, options);
-            // console.log(response);
             const result = await response.json();
-            console.log(result);
-            setData(result);
+            setData(result.data);
             setIsLoading(false);
         }
         catch (error) {
@@ -41,7 +39,7 @@ const useFetch = (query) => {
     }
 
     useEffect(() => {
-        fetchData();
+        // fetchData();
     }, [])
 
 
