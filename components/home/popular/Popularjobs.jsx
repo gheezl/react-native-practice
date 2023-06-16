@@ -15,7 +15,7 @@ const Popularjobs = () => {
   // const [error, setError] = useState(false);
   const router = useRouter();
 
-  const { data, isLoading, error } = useFetch("search")
+  const { data, isLoading, error } = useFetch("React Developer in Los Angeles")
 
   return (
     <View style={styles.container}>
